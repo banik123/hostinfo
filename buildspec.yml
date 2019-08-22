@@ -1,0 +1,19 @@
+phases:
+ install:
+    runtime-versions:
+      docker: 18
+ pre_build:
+    commands:
+      - "echo Logging in to Docker Hub..."
+      - "$(aws ecr get-login --no-include-email --region us-east-1)" 
+ build:
+    commands:
+      - "echo Build started on `date`"
+      - "echo Building the Docker image..."
+      - "docker build -t ctg-devops-banik ."
+      - "docker tag ctg-devops-banik:latest 543816070942.dkr.ecr.us-east-1.amazonaws.com/ctg-devops-banik:latest"
+ post_build:
+    commands:
+       - "docker push 543816070942.dkr.ecr.us-east-1.amazonaws.com/ctg-devops-banik:latest"
+ 
+version: 0.2
