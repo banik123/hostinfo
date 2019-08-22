@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 #getting the details
-@app.route('/machineinfo')
+@app.route('/hostinfo')
 
 def machineinfo():
     #get machine details
@@ -20,5 +20,5 @@ def machineinfo():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=9000)
+    app.run(debug=True, host='0.0.0.0', port=8000)
 
