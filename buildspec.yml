@@ -10,10 +10,10 @@ phases:
     commands:
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t ctg_devops_banik ."
-      - "docker tag ctg_devops_banik:latest 543816070942.dkr.ecr.us-east-1.amazonaws.com/ctg_devops_banik:latest"
+      - "docker build -t ctg_devops_banik_hostinfo ."
+      - "docker tag ctg_devops_banik_hostinfo:latest 543816070942.dkr.ecr.us-east-1.amazonaws.com/ctg_devops_banik_hostinfo:latest"
  post_build:
     commands:
-       - "docker push 543816070942.dkr.ecr.us-east-1.amazonaws.com/ctg_devops_banik:latest"
+       - "docker push 543816070942.dkr.ecr.us-east-1.amazonaws.com/ctg_devops_banik_hostinfo:latest"
  
 version: 0.2
