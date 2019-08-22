@@ -6,6 +6,6 @@ WORKDIR /Demo
 
 RUN pip install -r requirements.txt
 
-EXPOSE 9005
+EXPOSE 9006
 
 CMD ["python","./app.py"]
